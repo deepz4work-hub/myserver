@@ -1,9 +1,9 @@
-const http=require('http');
+const http = require('http');
 
 
-const server=http.createServer((req,res)=>{
-    if(req.url=='/' ||req.url=="/home")
-    res.write(`<!DOCTYPE html>
+const server = http.createServer((req, res) => {
+  if (req.url == '/' || req.url == "/home")
+   { res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -102,8 +102,10 @@ const server=http.createServer((req,res)=>{
 </body>
 </html>
 `)
-else if(req.url=="/aboutus")
-   res.write(`<!DOCTYPE html>
+return res.end()
+   }
+  else if (req.url == "/aboutus")
+  {  res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -157,8 +159,11 @@ else if(req.url=="/aboutus")
     <p>&copy; 2025 My ThreeTigers.Inc. All rights reserved.</p>
   </footer>
 `)
-else if(req.url=="/contactus")
-   res.write(`<!DOCTYPE html>
+return res.end()
+  }
+  else if (req.url == "/contactus")
+  {
+    res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -224,17 +229,19 @@ else if(req.url=="/contactus")
 </body>
 </html>
 `)
-else{
-    res.writeHead(404,{"Content-Type":"text/html"})
+return res.end()
+    }
+  else {
+    res.writeHead(404, { "Content-Type": "text/html" })
     res.end("<h1>404-Page Not Found</h1>")
-}
+  }
 })
 
-const PORT=3000;
+const PORT = 3000;
 
 
 
 //creating server
-server.listen(PORT,()=>{
-    console.log(`Server Running at http://localhost:${PORT}`)
+server.listen(PORT, () => {
+  console.log(`Server Running at http://localhost:${PORT}`)
 })
