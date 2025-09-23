@@ -1,6 +1,6 @@
 # this project is build and deployed in render and available in 
 
-https://node-mysm.onrender.com/
+https://myserver-6rd5.onrender.com
 
 
 # 🌐 Simple Node.js Server (Without Express)
