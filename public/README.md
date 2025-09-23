@@ -1,6 +1,13 @@
+
+This README covers the purpose, setup, usage, and troubleshooting tips for your Node.js static file server. It can be customized further as needed.
+
 # Simple Node.js HTTP Server
 
 This is a basic HTTP server built with Node.js that serves static HTML files from the `public` folder based on the URL paths `/`, `/home`, `/aboutus`, and `/contactus`.
+
+# Deployment
+
+Please check this project deployed on https://myserver-6rd5.onrender.com/ [Please wait till it get built and deployed in render]
 
 ## Features
 
