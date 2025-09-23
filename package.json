@@ -7,8 +7,8 @@
     "start":"node server.js",
     "build":"echo 'No build step needed'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node","mern","routing"],
+  "author": "Deepa Prabhu",
   "license": "ISC",
-  "description": ""
+  "description": "My project on node Routing"
 }
