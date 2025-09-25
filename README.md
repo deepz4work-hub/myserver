@@ -9,8 +9,11 @@ A **lightweight Node.js HTTP server** serving a multi-page website with **Home**
 
 - ✅ Fully responsive **Home, About Us, Contact Us** pages.  
 - ✅ Built with **plain Node.js HTTP server** (no Express required).  
-- ✅ Handles **GET**  requests for `/` and `/home`.   
+- ✅ Handles **GET**  requests for `/` and `/home`for homepage
+- ✅ Handles **GET**  requests for `/contact`for contactpage
+- ✅ Handles **GET**  requests for `/aboutus`for aboutuspage
 
+response status code is given for every call created.
 ---
 
 ## 🛠 Requirements
