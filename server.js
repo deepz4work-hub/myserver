@@ -1,10 +1,9 @@
-const http = require('http');
+const http = require("http"); //importing module
 
 
-const server = http.createServer((req, res) => {
-  if (req.method=="GET"&&(req.url == '/' || req.url == "/home"))
-   { 
-     res.writeHead(200, { "Content-Type": "text/html" });
+const server = http.createServer((req, res) => {//creating server
+  if (req.method == "GET" && (req.url == "/" || req.url == "/home")) {//api routing for "GET" and default url to be home
+    res.writeHead(200, { "Content-Type": "text/html" });//status code
     res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,11 +102,10 @@ const server = http.createServer((req, res) => {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-`)
-return res.end()
-   }
-  else if (req.url == "/aboutus")
-  { res.writeHead(200, { "Content-Type": "text/html" }); 
+`);//displayed data
+    return res.end();
+  } else if (req.url == "/aboutus") {//routing to aboutus
+    res.writeHead(200, { "Content-Type": "text/html" });//status code
     res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,11 +159,10 @@ return res.end()
   <footer>
     <p>&copy; 2025 My ThreeTigers.Inc. All rights reserved.</p>
   </footer>
-`)
-return res.end()
-  }
-  else if (req.url == "/contactus")
-  {
+`);//displayed data
+    return res.end();
+  } else if (req.url == "/contact") {//routing to contact
+    res.writeHead(200, { "Content-Type": "text/html" });//status code
     res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -231,20 +228,17 @@ return res.end()
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-`)
-return res.end()
-    }
-  else {
-    res.writeHead(404, { "Content-Type": "text/html" })
-    res.end("<h1>404-Page Not Found</h1>")
+`);//displayed data
+    return res.end();
+  } else {//handling routing error
+    res.writeHead(404, { "Content-Type": "text/html" });//status code
+    res.end("<h1>404-Page Not Found</h1>");//error display
   }
-})
+});
 
 const PORT = 3000;
 
-
-
 //creating server
 server.listen(PORT, () => {
-  console.log(`Server Running at http://localhost:${PORT}`)
-})
+  console.log(`Server Running at http://localhost:${PORT}`);
+});
