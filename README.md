@@ -23,11 +23,12 @@ project/
 - `fs` → Reads the HTML files from the filesystem.  
 - `path` → Safely constructs file paths.  
 - Routes:
-  - `/` or `/home` → Loads `home.html`  
-  - `/aboutus` → Loads `aboutus.html`  
-  - `/contactus` → Loads `contactus.html`  
-  - Any other route → Shows a **404 Page Not Found**  
+  - `/` or `/home` → Loads `home.html`  200 statusCode
+  - `/aboutus` → Loads `aboutus.html`  200 statusCode
+  - `/contactus` → Loads `contactus.html`  **200 statusCode
+  - Any other route → Shows a **404 Page Not Found**  400 statusCode
 
+--Response code is given 200 for routing and any error will be handled with 400
 ---
 
 ## 🚀 Getting Started

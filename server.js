@@ -2,8 +2,10 @@ const http = require('http');
 
 
 const server = http.createServer((req, res) => {
-  if (req.url == '/' || req.url == "/home")
-   { res.write(`<!DOCTYPE html>
+  if (req.method=="GET"&&(req.url == '/' || req.url == "/home"))
+   { 
+     res.writeHead(200, { "Content-Type": "text/html" });
+    res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -105,7 +107,8 @@ const server = http.createServer((req, res) => {
 return res.end()
    }
   else if (req.url == "/aboutus")
-  {  res.write(`<!DOCTYPE html>
+  { res.writeHead(200, { "Content-Type": "text/html" }); 
+    res.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
