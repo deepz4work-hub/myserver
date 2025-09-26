@@ -31,9 +31,9 @@ Code Explanation Given:
                 <li><a href="/contact">Contact Us</a></li>
         </ul>`)
      }
-#### after the redirection to particular routes , res.end() should be used to finish the response
+### after the redirection to particular routes , res.end() should be used to finish the response
 
-### res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
+#### res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
 
         else if(req.url==='/contact'){}   //routing to contact
 
