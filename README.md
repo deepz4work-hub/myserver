@@ -1,10 +1,61 @@
 # 🌐 My Website Node.js Server
 
 
-A **lightweight Node.js HTTP server** serving a multi-page website with **Home**, **About Us**, and **Contact Us** pages using plain HTTP. Fully styled with **Bootstrap 5** and supports Chrome DevTools JSON requests.
-
+A **lightweight Node.js HTTP server** serving a multi-page website with **Home**, **About Us**, and **Contact Us** pages using plain HTTP. Fully styled with **Bootstrap 5** 
 ---
+Code Explanation Given:
 
+### importing http module
+
+       const http=require('http');   
+
+### Port declaration
+
+       const PORT=3000                   
+
+### serverCreation
+
+       const server=http.createServer((req,res)=>{  
+
+## Routing
+
+       if(req.url==='/home' || req.url===('/')){ //routing to defaultPage or homepage
+        
+## Redirection is done using this code in menu and res.write is used to pass the values displayed as the response
+
+
+       res.write(`
+        <ul class="menu">           
+                <li><a href="/home">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+        </ul>`)
+     }
+## after the redirection to particular routes , res.end() should be used to finish the response
+
+## res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
+
+        else if(req.url==='/contact'){}   //routing to contact
+
+    
+
+        else if(req.url==='/aboutus'){} //routing to aboutus
+
+
+## else is used for invalid route Error Handling
+
+        else {res.write('<h1>404-Error File not found</h1>)} // 
+
+    })
+
+
+### server running
+server.listen(PORT ,()=>{
+    console.log(`Server starting on ${PORT}`)
+})
+
+
+********************************************************
 ## 🚀 Features
 
 - ✅ Fully responsive **Home, About Us, Contact Us** pages.  
@@ -40,6 +91,7 @@ http://localhost:3000
 | Method | Route               |    Description   
 | GET    | `/` or `/home`      | Home page                              
 | GET    | `/aboutus`          | About Us page                              
-| GET    | `/contactus`        | Contact Us page with form     
-| POST   | `/` or `/home`      | Handles POST form submissions (customizable) |
+| GET    | `/contact`        | Contact Us page with form   
+
+
 
