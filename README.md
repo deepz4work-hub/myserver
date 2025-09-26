@@ -9,19 +9,19 @@ Code Explanation Given:
 
        const http=require('http');   
 
-### Port declaration
+### port declaration
 
        const PORT=3000                   
 
-### serverCreation
+### server creation
 
        const server=http.createServer((req,res)=>{  
 
-## Routing
+## routing
 
        if(req.url==='/home' || req.url===('/')){ //routing to defaultPage or homepage
         
-## Redirection is done using this code in menu and res.write is used to pass the values displayed as the response
+## redirection is done using this code in menu and res.write is used to pass the values displayed as the response
 
 
        res.write(`
