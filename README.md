@@ -20,6 +20,12 @@ Code Explanation Given:
 ### routing
 
        if(req.url==='/home' || req.url===('/')){ //routing to defaultPage or homepage
+
+### response code for displaying the result of the request
+
+        res.statusCode=200
+
+        here 200 is the response code for success 404 for file not found and these are standard response code
         
 ### redirection is done using this code in menu and res.write is used to pass the values displayed as the response
 
@@ -44,7 +50,9 @@ Code Explanation Given:
 
 ### else is used for invalid route Error Handling
 
-        else {res.write('<h1>404-Error File not found</h1>)} // 
+        else {
+            res.statusCode=404  
+            res.write('<h1>404-Error File not found</h1>)} // 
 
     })
 
@@ -56,6 +64,10 @@ server.listen(PORT ,()=>{
 
 
 ********************************************************
+
+## The code is installed and deployed on 
+
+
 ## 🚀 Features
 
 - ✅ Fully responsive **Home, About Us, Contact Us** pages.  
@@ -88,10 +100,10 @@ node server.js
 4. Open your browser:
 http://localhost:3000
 
-| Method | Route               |    Description   
-| GET    | `/` or `/home`      | Home page                              
-| GET    | `/aboutus`          | About Us page                              
-| GET    | `/contact`        | Contact Us page with form   
+|Route               |    Description   |Status Code
+|`/` or `/home`      | Home page         |200        
+|`/aboutus`          | About Us page      |200                    
+|`/contact`        | Contact Us page with form   200
 
 
 
