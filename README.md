@@ -17,11 +17,11 @@ Code Explanation Given:
 
        const server=http.createServer((req,res)=>{  
 
-## routing
+### routing
 
        if(req.url==='/home' || req.url===('/')){ //routing to defaultPage or homepage
         
-## redirection is done using this code in menu and res.write is used to pass the values displayed as the response
+### redirection is done using this code in menu and res.write is used to pass the values displayed as the response
 
 
        res.write(`
@@ -31,9 +31,9 @@ Code Explanation Given:
                 <li><a href="/contact">Contact Us</a></li>
         </ul>`)
      }
-## after the redirection to particular routes , res.end() should be used to finish the response
+#### after the redirection to particular routes , res.end() should be used to finish the response
 
-## res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
+### res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
 
         else if(req.url==='/contact'){}   //routing to contact
 
@@ -42,7 +42,7 @@ Code Explanation Given:
         else if(req.url==='/aboutus'){} //routing to aboutus
 
 
-## else is used for invalid route Error Handling
+### else is used for invalid route Error Handling
 
         else {res.write('<h1>404-Error File not found</h1>)} // 
 
