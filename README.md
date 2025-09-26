@@ -36,16 +36,27 @@ Code Explanation Given:
                 <li><a href="/aboutus">About Us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
         </ul>`)
-     }
+     
 ### after the redirection to particular routes , res.end() should be used to finish the response
 
 #### res.end should not be used before res.write as will be getting error 'ERR_STREAM_WRITE_AFTER_END'
 
-        else if(req.url==='/contact'){}   //routing to contact
+       res.end()
+       }
+
+        else if(req.url==='/contact'){
+              res.statusCode=200;
+              res.write(<html> write html for contact page </html>)
+              res.end()
+        }   //routing to contact
 
     
 
-        else if(req.url==='/aboutus'){} //routing to aboutus
+        else if(req.url==='/aboutus'){
+               res.statusCode=200;
+              res.write(<html> write html for contact page </html>)
+              res.end()
+        } //routing to aboutus
 
 
 ### else is used for invalid route Error Handling
